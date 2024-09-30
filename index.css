@@ -1,0 +1,536 @@
+/*----------------- CSS Reset -----------------*/
+
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/*----------------- Main CSS -----------------*/
+
+/* START OF WHAT WILL BE REMOVED LATER */
+img {
+	width: 150px;
+	height: 150px;
+}
+
+#socials img, #social-media img {
+	width: 50px;
+	height: 50px;
+}
+
+/* END OF WHAT WILL BE REMOVED LATE */
+
+html {
+	background-color: rgb(226, 226, 226);
+}
+
+h1 {
+	font-size: 3em;
+	color: white;
+}
+
+h2 {
+	font-size: 2em;
+}
+
+h3 {
+	font-size: 1.5em;
+}
+
+p {
+	font-size: 1.25em;
+}
+
+#skip-link {
+	position: absolute;
+	top: 1000%;
+	right: 1000%;
+}
+
+header {
+	background-color: black;
+}
+
+nav {
+	background-color: rgb(194, 194, 194);
+}
+
+nav a {
+	color: black;
+	text-decoration: none;
+}
+
+main {
+	background-color: white;
+}
+
+#featured, #activities {
+	background-color: rgb(194, 194, 194);
+}
+
+footer {
+	background-color: black;
+}
+
+footer p {
+	color: white;
+}
+
+/*-----------------   Small Screen -----------------*/
+@media screen and (min-width: 412px) {
+	body {
+		width: 412px;
+		margin: auto;
+	}
+
+	nav {
+		position: absolute;
+		left: -110%;
+	}
+
+	header {
+		display: grid;
+		grid-template-areas:
+			"logo title";
+	}
+
+	header img {
+		grid-area: logo;
+		width: 100px;
+		height: 100px;
+		margin: 10px;
+	}
+
+	header h1 {
+		grid-area: title;
+		margin-top: 60px;
+	}
+}
+
+
+/*-----------------   Medium Screen   -----------------*/
+@media screen and (min-width: 768px) {
+
+	/*-----------------   Header   -----------------*/
+
+	body {
+		width: 768px;
+		margin: auto;
+	}
+
+	nav {
+		position: static;
+		left: 0;
+	}
+
+	header {
+		display: grid;
+		grid-template-areas:
+				"logo title"
+				"nav nav";
+	}
+
+	header img {
+		grid-area: logo;
+		width: 100px;
+		height: 100px;
+		padding: 25px;
+	}
+
+	header h1 {
+		margin: 0;
+		grid-area: title;
+		padding-top: 50px;
+		position: relative;
+		left: -200px;
+	}
+
+	header nav {
+		grid-area: nav;
+		padding: 20px 0;
+	}
+
+	nav ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+	}
+
+	nav ul li {
+		margin: auto;
+	}
+
+	nav ul li a {
+		font-size: 1.5em;
+	}
+
+	/*-----------------   Home and About   -----------------*/
+
+	#about-business, #about-creator {
+		display: grid;
+		grid-template-areas:
+				"title title title"
+				"picture tet tet";
+		margin: auto;
+		padding: 20px 0;
+		background-color: white;
+	}
+
+	#about-business h2, #about-creator h2 {
+		grid-area: title;
+		padding-bottom: 20px;
+		text-align: center;
+	}
+
+	#about-business img, #about-creator img {
+		grid-area: picture;
+		width: 150px;
+		height: 150px;
+		margin-left: 34px;
+	}
+
+	#about-business p, #about-creator p {
+		grid-area: tet;
+		padding-left: 20px;
+		margin-right: 34px;
+	}
+
+	#featured h2, #activities h2 {
+		text-align: center;
+		padding-top: 20px;
+	}
+
+	#featured ul, #activities ul {
+		display: grid;
+		grid-template-areas:
+				"one one two two"
+				". three three .";
+	}
+
+	#featured li, #activities li {
+		display: flex;
+		flex-direction: column;
+		width: 200px;
+		padding: 50px 0;
+		margin: 0 auto;
+	}
+
+	#featured li img, #activities li img {
+		width: 200px;
+		height: 200px;
+	}
+
+	#featured li p, #activities li p {
+		text-align: center;
+	}
+
+	.one {
+		grid-area: one;
+	}
+
+	.two {
+		grid-area: two;
+	}
+
+	.three {
+		grid-area: three;
+	}
+
+	footer {
+		padding-top: 20px;
+		display: flex;
+		flex-direction: column;
+	}
+
+	footer div {
+		width: 450px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		padding: 20px 0;
+	}
+
+	#socials {
+		display: flex;
+		flex-direction: row;
+		width: 350px;
+		justify-content: space-between;
+		margin-left: 400px;
+	}
+
+
+	/*-----------------   Products page   -----------------*/
+	main > h2 {
+		text-align: center;
+		padding-top: 30px;
+	}
+
+	#products {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		width: 700px;
+		margin: 0 34px;
+		padding-bottom: 30px;
+	}
+
+	.product {
+		width: 300px;
+		margin: auto;
+		margin-top: 30px;
+	}
+
+	.product img {
+		width: 200px;
+		height: 200px;
+		margin-left: 50px;
+	}
+
+	.product p {
+		text-align: center;
+	}
+
+	/*-----------------   Contact page   -----------------*/
+	.req {
+		color: rgb(174, 0, 0);
+	}
+
+	#requ {
+		font-size: 1em;
+	}
+
+	form {
+		width: 700px;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	form div {
+		width: 500px;
+		display: grid;
+		grid-template-columns: 0.5fr 1fr;
+		text-align: right;
+		align-items: center;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	form input {
+		width: 300px;
+		height: 50px;
+		font-size: 1.25em;
+	}
+
+	form label {
+		font-size: 1.35em;
+		margin-right: 10px;
+	}
+
+	#message-div {
+		align-items: start;
+	}
+
+	#message-div textarea {
+		width: 300px;
+		height: 100px;
+		font-size: 1.5em;
+	}
+
+	form > input {
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	#requ {
+		margin-left: 200px;
+		margin-top: 20px;
+	}
+
+	#error {
+		margin-left: 200px;
+		margin-top: 20px;
+	}
+
+	#social-media {
+		width: 400px;
+		margin: auto;
+		padding-bottom: 50px;
+	}
+
+	#social-media h3 {
+		text-align: center;
+	}
+
+	#social-media ul {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	#social-media li {
+		position: relative;
+		left: 75px;
+		margin-top: 20px;
+	}
+
+	#social-media li a {
+		text-decoration: none;
+		color: black;
+		font-size: 1.25em;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#social-media li a div {
+		margin-left: 10px;
+		margin-top: 15px;
+	}
+}
+
+
+
+/*-----------------   Large Screen   -----------------*/
+
+
+@media screen and (min-width: 1280px) {
+	body {
+		width: 1280px;
+		margin: auto;
+	}
+
+	header img {
+		width: 150px;
+		height: 150px;
+	}
+
+	header h1 {
+		left: -425px;
+		margin-top: 25px;
+	}
+
+	#socials {
+		margin-left: 900px;
+	}
+
+	/*-----------------   Home and About   -----------------*/
+
+	#about-business p, #about-creator p {
+		margin-top: 30px;
+	}
+
+	#featured ul, #activities ul {
+		display: grid;
+		grid-template-areas:
+			"one two three";
+	}
+
+	/*-----------------   Products   -----------------*/
+
+	#products {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.product p {
+		width: 200px;
+		margin: auto;
+	}
+
+	/*-----------------   Contact   -----------------*/
+
+	form {
+		width: 1200px;
+		display: grid;
+		grid-template-areas:
+			"first message"
+			"last message"
+			"email message"
+			"subm subm";
+	}
+
+	#first-name {
+		grid-area: first;
+	}
+
+	#last-name {
+		grid-area: last;
+	}
+
+	#email-address {
+		grid-area: email;
+	}
+
+	#message-div {
+		grid-area: message;
+		position: relative;
+		left: -50px;
+	}
+
+	#submit {
+		grid-area: subm;
+	}
+
+	#message-div textarea {
+		width: 500px;
+		height: 220px;
+	}
+
+	#requ {
+		margin-left: 150px;
+	}
+
+	#error {
+		margin-left: 150px;
+	}
+
+	#social-media {
+		width: 1200px;
+	}
+
+	#social-media ul {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
