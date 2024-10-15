@@ -1,3 +1,7 @@
+/*-----------------   Font Imports   -----------------*/
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
 /*----------------- CSS Reset -----------------*/
 
 /* http://meyerweb.com/eric/tools/css/reset/ 
@@ -51,38 +55,47 @@ table {
 
 /*----------------- Main CSS -----------------*/
 
-/* START OF WHAT WILL BE REMOVED LATER */
-img {
-	width: 150px;
-	height: 150px;
+:root {
+	font-family: 'Open Sans';
+	--logo-light-blue: #91C2EE;
+	--logo-dark-blue: #20629D;
 }
-
-#socials img, #social-media img {
-	width: 50px;
-	height: 50px;
-}
-
-/* END OF WHAT WILL BE REMOVED LATE */
 
 html {
-	background-color: rgb(226, 226, 226);
+	background-color: white;
+}
+
+body {
+	box-shadow: -10px 5px 20px rgb(52, 52, 52), 2px 5px 20px rgb(52, 52, 52);
 }
 
 h1 {
-	font-size: 3em;
-	color: white;
+	font-family: 'Lobster';
+	font-size: 5.2em;
+	color: var(--logo-dark-blue);
 }
 
 h2 {
 	font-size: 2em;
+	font-weight: bold;
 }
 
 h3 {
 	font-size: 1.5em;
+	font-weight: bold;
 }
 
 p {
 	font-size: 1.25em;
+	line-height: 1.3;
+}
+
+a:hover {
+	color: #184c7a;
+}
+
+a svg:hover {
+	fill: #184c7a;
 }
 
 #skip-link {
@@ -92,50 +105,154 @@ p {
 }
 
 header {
-	background-color: black;
+	background-color: #fffef2;
 }
 
 nav {
-	background-color: rgb(194, 194, 194);
+	background-color: #cbe9fd;
 }
 
 nav a {
 	color: black;
 	text-decoration: none;
+	font-weight: bold;
 }
 
-main {
-	background-color: white;
+#about-business, #about-creator {
+	background-color: #fffef2;
 }
 
 #featured, #activities {
-	background-color: rgb(194, 194, 194);
+	background-color: #cbe9fd;
+	color: black;
+}
+
+main {
+	background-color: #fffef2;
+}
+
+#products img, #featured img, #activities img {
+	border: 0.4em solid var(--logo-dark-blue);
+}
+
+.redColor {
+	color: rgb(174, 0, 0);
 }
 
 footer {
-	background-color: black;
+	background-color: var(--logo-light-blue);
 }
 
 footer p {
-	color: white;
+	color: black;
 }
 
 /*-----------------   Small Screen -----------------*/
-@media screen and (min-width: 412px) {
+@media screen and (min-width: 412px) and (max-width: 767px) {
+
+	/*-----------------   Header   -----------------*/
+
 	body {
 		width: 412px;
 		margin: auto;
 	}
 
+	/*   Hamburger Menu   */
+
 	nav {
+		display: block;
+  		position: relative;
+		top: -150px;
+		left: 369px;
+		z-index: 1;
+		-webkit-user-select: none;
+		user-select: none;
+		width: 33px;
+		background-color: #fffef2;
+	}
+
+	nav input {
+		display: block;
+		width: 40px;
+		height: 32px;
 		position: absolute;
-		left: -110%;
+		top: -7px;
+		left: -5px;
+		cursor: pointer;
+		opacity: 0;
+		z-index: 2;
+		-webkit-touch-callout: none;
+	}
+
+	nav span {
+		display: block;
+		width: 33px;
+		height: 4px;
+		margin-bottom: 5px;
+		position: relative;
+		background-color: var(--logo-dark-blue);
+		border-radius: 3px;
+		z-index: 1;
+		transform-origin: 4px 0px;
+		transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0), background 0.5s cubic-bezier(0.77,0.2,0.05,1.0), opacity 0.55s ease;
+	}
+
+	nav span:first-child {
+		transform-origin: 0% 0%;
+	}
+
+	nav span:nth-last-child(2) {
+		transform-origin: 0% 100%;
+	}
+
+	/*   Transform the lines to an X   */
+
+	nav input:checked ~ span {
+  		opacity: 1;
+  		transform: rotate(45deg) translate(-2px, -1px);
+  		background-color: #232323;
+	}
+
+	nav input:checked ~ span:nth-last-child(3) {
+  		opacity: 0;
+  		transform: rotate(0deg) scale(0.2, 0.2);
+	}
+
+	nav input:checked ~ span:nth-last-child(2) {
+  		transform: rotate(-45deg) translate(0, -1px);
+	}
+
+	nav ul {
+		position: absolute;
+		width: 352px;
+		margin: auto;
+		top: -10px;
+		left: -369px;
+		padding: 30px;
+		background-color: #fffef2;
+		list-style-type: none;
+		-webkit-font-smoothing: antialiased;
+		transform-origin: 0% 0%;
+		transform: translate(150%, 0);
+		transition: transform 0.7s cubic-bezier(0.77,0.2,0.05,1.0);
+	}
+
+	nav ul li {
+		padding: 10px 0;
+		font-size: 22px;
+		text-align: right;
+	}
+
+	nav input:checked ~ ul {
+		transform: none;
 	}
 
 	header {
 		display: grid;
 		grid-template-areas:
 			"logo title";
+		box-shadow: -10px 5px 20px rgb(52, 52, 52), 2px 5px 20px rgb(52, 52, 52);
+		position: sticky;
 	}
 
 	header img {
@@ -143,11 +260,200 @@ footer p {
 		width: 100px;
 		height: 100px;
 		margin: 10px;
+		margin-top: 50px;
+		position: relative;
+		top: 20px;
 	}
 
 	header h1 {
 		grid-area: title;
-		margin-top: 60px;
+		margin-top: 50px;
+		position: relative;
+		top: 20px;
+		font-size: 4em;
+	}
+
+	/*-----------------   Home and About   -----------------*/
+
+	main h2 {
+		text-align: center;
+		padding: 20px 0;
+	}
+
+	#about-business img, #about-creator img {
+		margin-left: 130px;
+		width: 150px;
+		height: 150px;
+	}
+
+	#about-business p, #about-creator p {
+		width: 375px;
+		text-align: center;
+		margin: auto;
+		padding: 20px 0;
+		padding-top: 10px;
+	}
+
+	#featured, #activities {
+		text-align: center;
+		width: 412px;
+		margin: auto;
+	}
+
+	#featured img, #activities img {
+		margin-bottom: 10px;
+		width: 150px;
+		height: 150px;
+	}
+
+	#featured p, #activities p {
+		width: 375px;
+		margin: auto;
+		padding-bottom: 40px;
+	}
+
+	/*-----------------   Products Page   -----------------*/
+
+	.product {
+		display: flex;
+		flex-direction: row;
+		width: 388px;
+		margin: auto;
+		margin-bottom: 20px;
+		padding: 10px 12px;
+	}
+
+	.product img {
+		width: 100px;
+		height: 100px;
+		margin-right: 10px;
+	}
+
+	.product:nth-child(odd) {
+		background-color: #cbe9fd;
+	}
+
+	#products {
+		padding-bottom: 20px;
+	}
+
+	/*-----------------   Contact Page   -----------------*/
+
+	.req {
+		color: rgb(174, 0, 0);
+	}
+
+	#requ {
+		font-size: 1em;
+	}
+
+	form {
+		width: 388px;
+		margin: auto;
+		display: flex;
+		flex-direction: column;
+	}
+
+	form div {
+		width: 388px;
+		display: grid;
+		grid-template-columns: 0.5fr 1fr;
+		text-align: right;
+		align-items: center;
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	form input {
+		width: 200px;
+		height: 50px;
+		font-size: 1.25em;
+	}
+
+	form label {
+		font-size: 1.35em;
+		margin-right: 10px;
+	}
+
+	#message-div {
+		align-items: start;
+	}
+
+	#message-div textarea {
+		width: 200px;
+		height: 100px;
+		font-size: 1.25em;
+		font-family: 'Open Sans';
+	}
+
+	form > input {
+		margin: auto;
+		margin-top: 20px;
+	}
+
+	#requ {
+		margin-left: 50px;
+		margin-top: 20px;
+	}
+
+	#error {
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+
+	#social-media li a {
+		text-decoration: none;
+		color: black;
+		font-size: 1.25em;
+		display: flex;
+		flex-direction: row;
+	}
+
+	#social-media {
+		width: 388px;
+		margin: auto;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+
+	#social-media ul li {
+		margin: 10px 0px 0 125px;
+	}
+
+	#social-media ul li img {
+		width: 50px;
+		height: 50px;
+		margin-right: 5px;
+	}
+
+	#social-media ul li a div {
+		margin: auto;
+		margin-left: 0;
+	}
+
+	/*-----------------   Footer   -----------------*/
+
+	#socials {
+		width: 300px;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		margin: auto;
+		padding-top: 20px;
+	}
+
+	footer div {
+		width: 412px;
+		margin: auto;
+		margin-top: 20px;
+		text-align: center;
+		padding-bottom: 20px;
+	}
+
+	footer div p {
+		margin-top: 5px;
 	}
 }
 
@@ -162,9 +468,12 @@ footer p {
 		margin: auto;
 	}
 
-	nav {
-		position: static;
-		left: 0;
+	nav input {
+		display: none;
+	}
+
+	nav span {
+		display: none;
 	}
 
 	header {
@@ -176,8 +485,8 @@ footer p {
 
 	header img {
 		grid-area: logo;
-		width: 100px;
-		height: 100px;
+		width: 140px;
+		height: 140px;
 		padding: 25px;
 	}
 
@@ -186,7 +495,7 @@ footer p {
 		grid-area: title;
 		padding-top: 50px;
 		position: relative;
-		left: -200px;
+		left: -180px;
 	}
 
 	header nav {
@@ -196,7 +505,9 @@ footer p {
 
 	nav ul {
 		display: grid;
-		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-columns: 1fr 1fr 1.5fr 1.5fr;
+		width: 708px;
+		height: 75px;
 	}
 
 	nav ul li {
@@ -216,7 +527,6 @@ footer p {
 				"picture tet tet";
 		margin: auto;
 		padding: 20px 0;
-		background-color: white;
 	}
 
 	#about-business h2, #about-creator h2 {
@@ -236,6 +546,7 @@ footer p {
 		grid-area: tet;
 		padding-left: 20px;
 		margin-right: 34px;
+		text-align: left;
 	}
 
 	#featured h2, #activities h2 {
@@ -390,8 +701,10 @@ footer p {
 	}
 
 	#error {
-		margin-left: 200px;
+		margin: auto;
 		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
 	}
 
 	#social-media {
@@ -411,7 +724,7 @@ footer p {
 
 	#social-media li {
 		position: relative;
-		left: 75px;
+		left: 50px;
 		margin-top: 20px;
 	}
 
@@ -441,13 +754,18 @@ footer p {
 	}
 
 	header img {
-		width: 150px;
-		height: 150px;
+		width: 170px;
+		height: 170px;
+		margin-top: 20px;
 	}
 
 	header h1 {
-		left: -425px;
+		left: -405px;
 		margin-top: 25px;
+	}
+
+	nav ul {
+		width: 1220px;
 	}
 
 	#socials {
@@ -522,7 +840,10 @@ footer p {
 	}
 
 	#error {
-		margin-left: 150px;
+		margin: auto;
+		margin-top: 20px;
+		margin-bottom: 20px;
+		text-align: center;
 	}
 
 	#social-media {

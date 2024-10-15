@@ -8,7 +8,7 @@
 	<meta name="author" content="Peter Heck">
 	<meta name="description" content="The about page to the crotchet and knitting business called For A Loop. The founder of For A Loop hand creates different projects using yarn through the process of crocheting and knitting.">
 	<link rel="stylesheet" href="index.css">
-	<!--<script defer src="index.js"></script>-->
+	<link rel="icon" type="image/x-icon" href="images/favicon.ico">
 </head>
 
 <body>
@@ -16,24 +16,30 @@
 
 <header>
     <h1>For A Loop</h1>
-    <img src="images/blank-image.png" alt="Filler image until I have the real logo image">
-    <!--    Include a background image or color   -->
+    <img src="images/logo.png" alt="For A Loop logo image of a blue ball of yarn" id="logo-image">
     <!--   Skip to content link for accessibility   -->
     <a href="#main" id="skip-link">Skip to content</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-                <li><a href="products.html">PRODUCTS</a></li>
-                <li><a href="contact.html">CONTACT</a></li>
-            </ul>
-        </nav>
+    <nav>
+        <!--   Hamburger Menu Checkbox   -->
+        <input type="checkbox" id="hamburger">
+        <!--   Hamburger Menu Boxes/Lines   -->
+        <span></span>
+        <span></span>
+        <span></span>
+        <!--   Actual Navigation   -->
+        <ul>
+            <li><a href="index.html">HOME</a></li>
+            <li><a href="about.html">ABOUT</a></li>
+            <li><a href="products.html">PRODUCTS</a></li>
+            <li><a href="contact.html">CONTACT</a></li>
+        </ul>
+    </nav>
 </header>
 
 <main id="main">
     <section id="about-creator">
         <h2>Who Is Alexandra?</h2>
-        <img src="images/blank-image.png" alt="Filler image until I have an image to for Alexandra Lucas">
+        <img src="images/alexandra.jpg" alt="Alexandra Lucas with long hair in a beige dress standing on a balcony">
         <p>Alexandra Lucas is the creator of For A Loop. What started out as a simple hobby for her turned into a business that she enjoys. She also loves to create art and has even illustrated a children's book that is published on Amazon. The title of the book is Dino Dad's Journey: A Dinosaur Adventure! She is currently attending college at Arizona State University and strives to become an elementary school teacher.</p>
     </section>
 
@@ -41,17 +47,17 @@
         <h2>Activities</h2>
         <ul>
             <li class="one">
-                <img src="images/blank-image.png" alt="Filler image until I have an image to represent the featured activity">
+                <img src="images/canvas.JPG" alt="A large canvas on an easel with lots of smaller canvases on the floor to the left of the easel, there is also a green glowing cactus light on the right on a table">
                 <p>Alexandra loves doing art. Between drawing and painting, it is one of her favorite hobbies! She even paints magnets to hang up on the fridge!</p>
             </li>
 
             <li class="two">
-                <img src="images/blank-image.png" alt="Filler image until I have an image to represent the featured activity">
+                <img src="images/hiking.jpg" alt="A picture of a forest from the top of a butte filled with trees, the edge of the butte is made of grey rock">
                 <p>Alexandra loves to go on hikes and be outside whenever she gets the chance. She will go hiking every so often and loves to go see the scenery and take pictures!</p>
             </li>
 
             <li class="three">
-                <img src="images/blank-image.png" alt="Filler image until I have an image to represent the featured activity">
+                <img src="images/gardening.jpg" alt="A small cactus in the foreground that has yellow looking spikes in a brown pot, there is a small cactus behind it out of focus">
                 <p>Alexandra loves gardening and taking care of her plants. Some of her favorites are her succulents that do very well here in Arizona! She loves to name them all!</p>
             </li>
         </ul>
@@ -60,11 +66,29 @@
 
 <footer>
     <ul id="socials">
-        <!--   Will switch out for svg later   -->
-        <li><a href="#"><img src="images/blank-image.png" alt="Filler image until I have the svg for each social" width="150" height="150"></a></li>
-        <li><a href="#"><img src="images/blank-image.png" alt="Filler image until I have the svg for each social" width="150" height="150"></a></li>
-        <li><a href="#"><img src="images/blank-image.png" alt="Filler image until I have the svg for each social" width="150" height="150"></a></li>
-        <li><a href="#"><img src="images/blank-image.png" alt="Filler image until I have the svg for each social" width="150" height="150"></a></li>
+        <li> <!--   Instagram SVG   -->
+            <a href="#"><svg fill="#000000" width="50" height="50" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                <path d="M160,128a32,32,0,1,1-32-32A32.03667,32.03667,0,0,1,160,128Zm68-44v88a56.06353,56.06353,0,0,1-56,56H84a56.06353,56.06353,0,0,1-56-56V84A56.06353,56.06353,0,0,1,84,28h88A56.06353,56.06353,0,0,1,228,84Zm-52,44a48,48,0,1,0-48,48A48.05436,48.05436,0,0,0,176,128Zm16-52a12,12,0,1,0-12,12A12,12,0,0,0,192,76Z"/>
+              </svg></a>
+        </li>
+
+        <li> <!--   Facebook SVG   -->
+            <a href="#"><svg fill="#000000" width="50" height="50" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                <path d="M232,128a104.13983,104.13983,0,0,1-96,103.69531V152.00094h24a8,8,0,0,0,0-16H136v-24a16.01833,16.01833,0,0,1,16-16h16a8,8,0,0,0,0-16H152a32.03667,32.03667,0,0,0-32,32v24H96a8,8,0,0,0,0,16h24v79.69434A104.00166,104.00166,0,1,1,232,128Z"/>
+              </svg></a>
+        </li>
+
+        <li><!--   TikTok   -->
+            <a href="#"><svg fill="#000000" width="50" height="50" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                <path d="M232,84v40a7.99977,7.99977,0,0,1-8,8,103.32406,103.32406,0,0,1-48.00049-11.70752L176,156A76,76,0,1,1,86.59766,81.17971,7.99952,7.99952,0,0,1,96,89.05569l-.00049,41.63916a7.99971,7.99971,0,0,1-4.56689,7.22607A20.00272,20.00272,0,1,0,120,156V28a7.99977,7.99977,0,0,1,8-8h40a7.99977,7.99977,0,0,1,8,8,48.05436,48.05436,0,0,0,48,48A7.99977,7.99977,0,0,1,232,84Z"/>
+              </svg></a>
+        </li>
+
+        <li><!--   Twitter   -->
+            <a href="#"><svg fill="#000000" width="50px" height="50px" viewBox="0 0 256 256" id="Flat" xmlns="http://www.w3.org/2000/svg">
+                <path d="M245.65723,77.65674l-30.16407,30.16455C209.4707,177.70215,150.53809,232,80,232c-14.52441,0-26.49414-2.30273-35.57764-6.84473-7.33056-3.665-10.33349-7.59912-11.07861-8.71777a8,8,0,0,1,3.84717-11.92822c.25732-.09717,23.84814-9.15772,39.09521-26.40869a109.574,109.574,0,0,1-24.72656-24.355c-13.708-18.60352-28.206-50.91114-19.43066-99.17676a8.00023,8.00023,0,0,1,13.52832-4.22559c.35254.35156,33.64209,33.1709,74.3374,43.772L120,87.99609a48.31863,48.31863,0,0,1,48.6084-47.99267,48.11329,48.11329,0,0,1,40.96875,23.99609L240,64a8.0001,8.0001,0,0,1,5.65723,13.65674Z"/>
+              </svg></a>
+        </li>
     </ul>
 
     <div>
